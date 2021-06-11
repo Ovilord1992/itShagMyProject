@@ -1,4 +1,4 @@
-package m2_1;
+package itShagMyProject.m2_1;
 
 import java.util.Scanner;
 

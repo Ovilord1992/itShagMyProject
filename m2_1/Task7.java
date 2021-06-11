@@ -1,4 +1,4 @@
-package m2_1;
+package itShagMyProject.m2_1;
 
 public class Task7 {
     public static void main(String[] args) {

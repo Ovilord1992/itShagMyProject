@@ -1,4 +1,4 @@
-package m4_2;
+package itShagMyProject.m4_2;
 
 import javax.security.sasl.SaslClient;
 import java.util.Scanner;

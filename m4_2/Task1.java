@@ -1,4 +1,4 @@
-package m4_2;
+package itShagMyProject.m4_2;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class Task1 {
 
             for (int l = 0; l < k; l++) {
                 if (l == 0 || l == k - 1 || i == 0)
-                    System.out.print("+");
+                    System.out.print("*");
                 else {
                     System.out.print(" ");
                 }
@@ -31,7 +31,7 @@ public class Task1 {
             }
 
             for (int l = 0; l < k; l++) {
-                System.out.print("+");
+                System.out.print("*");
             }
             System.out.println();
         }

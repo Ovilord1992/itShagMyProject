@@ -1,6 +1,5 @@
-package m4_2;
+package itShagMyProject.m4_2;
 
-import javax.management.ObjectName;
 import java.util.Scanner;
 
 public class Task7 {
