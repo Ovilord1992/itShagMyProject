@@ -14,11 +14,10 @@ public class Task9 {
                 .toLowerCase();
         scanner.close();
 
-        System.out.println((sortString(a).equalsIgnoreCase(sortString(b)))? "Yes" : "No");
+        System.out.println((sortString(a).equalsIgnoreCase(sortString(b))) ? "Yes" : "No");
     }
 
-    public static String sortString(String inputString)
-    {
+    public static String sortString(String inputString) {
         char[] tempArray = inputString.toCharArray();
         Arrays.sort(tempArray);
         return new String(tempArray);

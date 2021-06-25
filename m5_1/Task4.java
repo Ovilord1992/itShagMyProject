@@ -1,16 +1,19 @@
 package ItShag.itShagMyProject.m5_1;
 
+import java.util.Scanner;
+
 public class Task4 {
     public static void main(String[] args) {
-        String[] a = "я очень хотел юы разузнать узнат занята ли ты сегодня обязательно перезвони мне".split(" ");
+        Scanner scanner = new Scanner(System.in);
+        String[] a = scanner.nextLine().split(" ");
         StringBuilder q = new StringBuilder();
-        for (String k: a) {
-            if (k.length() > 2) {
-                String z = k.substring(0, 1).replace("уеыаоэяию", "");
-                String v = k.substring(k.length() -1).replace("цкнгшщзхфвпрлджчсмтб", "");
-                if (z.length() == 0 && v.length() == 0){
-                    q.append(k).append(" ");
-                }
+        String glasReg = "[уеыаоэяию]";
+        String soglReg = "[цкнгшщзхфвпрлджчсмтб]";
+        for (String k : a) {
+            String[] h = k.split("");
+            if (h[0].replaceAll(glasReg, "").equals("")
+                    && h[h.length - 1].replaceAll(soglReg, "").equals("")) {
+                q.append(k).append(" ");
             }
         }
         System.out.println(q);

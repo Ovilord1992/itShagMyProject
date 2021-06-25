@@ -8,8 +8,8 @@ public class Task3 {
         String[] str = scanner.nextLine().split(" ");
         int calc = 0;
 
-        for (String k: str) {
-          calc = calc + k.length();
+        for (String k : str) {
+            calc = calc + k.length();
         }
 
         System.out.println("Средняя длинна слова " + calc / str.length);

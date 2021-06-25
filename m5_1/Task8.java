@@ -1,31 +1,41 @@
-package ItShag.itShagMyProject.m5_1;
+package itShagMyProject.m5_1;
 
+import java.util.Arrays;
 import java.util.Scanner;
-//TODO convet to C++
 
 public class Task8 {
     public static void main(String[] args) {
-        String lang = "";
-        StringBuilder name = new StringBuilder();
         Scanner scanner = new Scanner(System.in);
-        String[] a = scanner.nextLine().split("");
+        StringBuilder name = new StringBuilder();
 
-        int iter = 0;
-        for (String k: a) {
-            if (k.equals(k.toUpperCase()) && !lang.equals("C++")){
-                lang = "Java";
-                a[iter] = "_" + a[iter].toLowerCase();
+        String lang = "";
+
+        String[] a = scanner.nextLine().split("");
+        String aMod = Arrays.toString(a).replaceAll("_", "");
+
+        if (Arrays.toString(a).length() == aMod.length()) {
+            lang = "Java";
+            for (int i = 0; i < a.length; i++) {
+                if (a[i].equals(a[i].toUpperCase())) {
+                    name.append("_").append(a[i].toLowerCase());
+                } else {
+                    name.append(a[i]);
+                }
             }
-            if (k.equals("_") && !lang.equals("Java")){
-                lang = "C++";
-                a[iter] = a[iter].replace("_[A-Z]", k.toUpperCase());
+
+        } else {
+            lang = "C++";
+            for (int i = 0; i < a.length; i++) {
+                if (a[i].equals("_")) {
+                    a[i + 1] = a[i + 1].toUpperCase();
+                } else {
+                    name.append(a[i]);
+                }
             }
-            iter++;
         }
-        for (String k: a) {
-            name.append(k);
-        }
-        System.out.println(lang + "\n" +name);
+
+        System.out.println("lang " + lang + "\n" + name);
+
 
     }
 }

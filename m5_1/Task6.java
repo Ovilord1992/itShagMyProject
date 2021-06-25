@@ -6,7 +6,7 @@ public class Task6 {
     public static void main(String[] args) {
         String[] a = new String[100_000];
         int index = 0;
-        while (index < 100_000){
+        while (index < 100_000) {
             a[index] = index + "";
             index++;
         }

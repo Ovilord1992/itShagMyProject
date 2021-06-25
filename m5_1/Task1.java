@@ -1,6 +1,5 @@
 package ItShag.itShagMyProject.m5_1;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Task1 {

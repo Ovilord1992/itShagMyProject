@@ -7,75 +7,25 @@ public class Task10 {
         Scanner scanner = new Scanner(System.in);
         String z = scanner.nextLine();
         String[] a = z.split("");
-        String[] zero = {
-                "  ****  ",
-                " *    * ",
-                " *    * ",
-                " *    * ",
-                "  ****  "};
-        String[] one = {
-                "    *   ",
-                "  * *   ",
-                "    *   ",
-                "    *   ",
-                "  ***** "};
-        String[] tho = {
-                "   ***  ",
-                "  *   * ",
-                "      * ",
-                "    *   ",
-                "  ******"};
-        String[] thre = {
-                "   ***  ",
-                "      * ",
-                "     *  ",
-                "      * ",
-                "   ***  "};
-        String[] four = {
-                "  *   * ",
-                "  *   * ",
-                "   **** ",
-                "      * ",
-                "      * "};
-        String[] five = {
-                "  ****  ",
-                "  * *   ",
-                "      * ",
-                "  *   * ",
-                "   ***  "};
-        String[] six = {
-                "   ***  ",
-                "  *   * ",
-                "  * *   ",
-                "  *   * ",
-                "   ***  "};
-        String[] seven = {
-                "  ***** ",
-                "      * ",
-                "    *   ",
-                "   *    ",
-                "  *     "};
-        String[] eath = {
-                "   ***  ",
-                "  *   * ",
-                "    *   ",
-                "  *   * ",
-                "   ***  "};
-        String[] then = {
-                "   ***  ",
-                "  *   * ",
-                "   ** * ",
-                "      * ",
-                "   ***  "};
+        String[] zero = {"  ****  ", " *    * ", " *    * ", " *    * ", "  ****  "};
+        String[] one = {"    *   ", "  * *   ", "    *   ", "    *   ", "  ***** "};
+        String[] tho = {"   ***  ", "  *   * ", "      * ", "    *   ", "  ******"};
+        String[] thre = {"   ***  ", "      * ", "     *  ", "      * ", "   ***  "};
+        String[] four = {"  *   * ", "  *   * ", "   **** ", "      * ", "      * "};
+        String[] five = {"  ****  ", "  * *   ", "      * ", "  *   * ", "   ***  "};
+        String[] six = {"   ***  ", "  *   * ", "  * *   ", "  *   * ", "   ***  "};
+        String[] seven = {"  ***** ", "      * ", "    *   ", "   *    ", "  *     "};
+        String[] eath = {"   ***  ", "  *   * ", "    *   ", "  *   * ", "   ***  "};
+        String[] then = {"   ***  ", "  *   * ", "   ** * ", "      * ", "   ***  "};
 
         String[][] cancat = new String[a.length][zero.length];
 
         for (int i = 0; i < a.length; i++) {
-            if (a[i].equals("1")) {
-                System.arraycopy(one, 0, cancat[i], 0, zero.length);
-            }
             if (a[i].equals("0")) {
                 System.arraycopy(zero, 0, cancat[i], 0, zero.length);
+            }
+            if (a[i].equals("1")) {
+                System.arraycopy(one, 0, cancat[i], 0, zero.length);
             }
             if (a[i].equals("2")) {
                 System.arraycopy(tho, 0, cancat[i], 0, zero.length);

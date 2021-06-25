@@ -8,7 +8,7 @@ public class Task2 {
         Scanner scanner = new Scanner(System.in);
         StringBuilder a = new StringBuilder();
         int iter = 1;
-        while (a.length() < 1000 - ("" + iter).length()){
+        while (a.length() < 1000 - ("" + iter).length()) {
             a.append(iter);
             iter++;
         }
