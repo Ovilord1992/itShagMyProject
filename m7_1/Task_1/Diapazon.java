@@ -1,5 +1,6 @@
 package DZ.Task_1;
 
+
 public class Diapazon {
     private int diapazon;
     private int a;
