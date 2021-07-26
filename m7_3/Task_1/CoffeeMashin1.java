@@ -7,7 +7,7 @@ import DZ.Task_1.Ex.MyExVoter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoffeeMashin1 {
+public class CoffeeMashin1 extends PowerMashin{
     int AMERICANO_COFFEE = 22;
     int AMERICANO_VOTER = 100;
     int ECSPRESSO_COFFEE = 22;
@@ -120,5 +120,15 @@ public class CoffeeMashin1 {
         if (tank > tankVolume){
             throw new MyExTank();
         }
+    }
+
+    @Override
+    public void start() {
+        System.out.println("стартуе");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("стоп");
     }
 }

@@ -12,7 +12,7 @@ public class Runner {
     public static CoffeMashin3 coffeMashin3 = new CoffeMashin3(350, 471, 500, 500);
 
     public static void main(String[] args) throws Exception {
-        starter3();
+        starter1();
     }
 
     public static void starter1() throws Exception {
@@ -23,6 +23,8 @@ public class Runner {
         System.out.println("Voter: " + coffeeMashin1.getVoter() + " Coffee: " + coffeeMashin1.getCoffee() + " TankVolume: " + coffeeMashin1.getTank());
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextInt()) {
+            case 1 -> coffeeMashin1.start();
+            case 2 -> coffeeMashin1.stop();
             case 3 -> coffeeMashin1.americano();
             case 4 -> coffeeMashin1.ecspresso();
             case 5 -> coffeeMashin1.setTank(0);
@@ -38,6 +40,14 @@ public class Runner {
         System.out.println("Voter: " + coffeeMashin2.getVoter() + " Coffee: " + coffeeMashin2.getCoffee() + " TankVolume: " + coffeeMashin2.getTank() +  " MilkTank: " + coffeeMashin2.getMilkTank());
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextInt()) {
+            case 1 : {
+                coffeeMashin2.start();
+                break;
+            }
+            case 2 : {
+                coffeeMashin2.stop();
+                break;
+            }
             case 3 : {
                 coffeeMashin2.americano();
                 break;
@@ -72,6 +82,14 @@ public class Runner {
         System.out.println("Voter: " + coffeMashin3.getVoter() + " Coffee: " + coffeMashin3.getCoffee() + " TankVolume: " + coffeMashin3.getTank() +  " MilkTank: " + coffeMashin3.getMilkTank());
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextInt()) {
+            case 1 : {
+                coffeMashin3.start();
+                break;
+            }
+            case 2 : {
+                coffeMashin3.stop();
+                break;
+            }
             case 3 : {
                 coffeMashin3.americano();
                 break;
@@ -82,7 +100,7 @@ public class Runner {
                 break;
             }
             case 5 : {
-                coffeeMashin2.setTank(0);
+                coffeMashin3.setTank(0);
                 break;
             }
         }
