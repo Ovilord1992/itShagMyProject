@@ -91,11 +91,11 @@ public class Person implements Jsonable {
     public void toJson(Writer writer) throws IOException {
         final JsonObject jsonObject = new JsonObject();
         jsonObject.put("name", this.getName());
-        jsonObject.put("lastname", this.getLastName());
+        jsonObject.put("lastName", this.getLastName());
         jsonObject.put("nickName", this.getNickName());
         jsonObject.put("telephone", this.getTelephone());
         jsonObject.put("email", this.getEmail());
-        jsonObject.put("year", this.getYearOfBirth());
+        jsonObject.put("yearOfBirth", this.getYearOfBirth());
         jsonObject.toJson(writer);
     }
 }

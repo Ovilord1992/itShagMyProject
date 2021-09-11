@@ -17,33 +17,32 @@ import java.util.stream.Collectors;
 
 public class JsonConverter {
 
-    private static final List<Person> list = new ArrayList<>();
+    private static final List<Person> list = new LinkedList<>();
     private static final Person person = new Person();
     private static final File file = new File("j.json");
 
-    public void personInitializer(String name, String lastName, String nickName, List<String> num, String email, String year) {
+    public void personInitializer(String name, String lastName, String nickName, List<String> telephone, String email, String year) {
         person.setName(name);
         person.setLastName(lastName);
         person.setNickName(nickName);
-        person.setTelephone(num);
+        person.setTelephone(telephone);
         person.setEmail(email);
         person.setYearOfBirth(year);
-        getListPerson();
-        addNewPerson();
-        list.forEach(System.out::println);
+        jsonDescription();
+        if (numChecker(telephone)) {
+            addNewPerson();
+        }
     }
+
 
     private void addNewPerson(){
         list.add(person);
         try(FileWriter fileWriter = new FileWriter(file)) {
             Jsoner.serialize(list, fileWriter);
-        }catch (Exception exception){}
+        }catch (Exception ignored){}
     }
 
-
-
-
-    public void getListPerson(){
+    public List<Person> jsonDescription(){
         try(FileReader fileReader = new FileReader(file)) {
             JsonArray objects = Jsoner.deserializeMany(fileReader);
             Mapper mapper = new DozerBeanMapper();
@@ -53,9 +52,23 @@ public class JsonConverter {
                     .map(x -> mapper.map(x, Person.class)).collect(Collectors.toList());
             list.clear();
             list.addAll(collect);
-
         } catch (JsonException | IOException e) {
             e.printStackTrace();
         }
+        return list;
     }
+
+    private boolean numChecker(List<String> tel){
+        for (Person k : list){
+            for (String j : k.getTelephone()){
+                for (String s : tel){
+                    if (j.equalsIgnoreCase(s)){
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
 }
