@@ -1,0 +1,46 @@
+CREATE TABLE Groups(
+	id SERIAL NOT NULL,
+    name VARCHAR(10) NOT NULL UNIQUE,
+    rating INT NOT NULL
+    	CHECK(rating >= 0 AND rating <= 5),
+    year_curse INT NOT NULL
+    	CHECK(year_curse >= 1 AND year_curse <= 5),
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE Departments(
+	id SERIAL NOT NULL,
+    financing FLOAT NOT NULL
+    	DEFAULT 0
+    	CHECK(financing >= 0),
+    name VARCHAR(100)
+    	UNIQUE
+    	CHECK(name != ''),
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE Faculties(
+	id SERIAL NOT NULL,
+    name VARCHAR(100) NOT NULL
+    	UNIQUE
+    	CHECK(name != ''),
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE Teachers(
+	id SERIAL NOT NULL,
+    name VARCHAR(255) NOT NULL
+    	CHECK(name != ''),
+    premium DECIMAL NOT NULL
+    	DEFAULT 0
+    	CHECK(premium >= 0),
+    salary DECIMAL(19,4) NOT NULL
+    	CHECK(salare > 0),
+    surname VARCHAR(255) NOT NULL
+    	CHECK(surname != ''),
+    emploement_date DATE NOT NULL
+    	CHECK(emploement_date >= "01.01.1990"),
+    PRIMARY KEY (id)
+)
+
+ALTER TABLE teachers ADD salary DECIMAL(19, 4) NOT NULL CHECK(salary > 0)
